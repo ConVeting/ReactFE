@@ -1,0 +1,169 @@
+.history-container {
+    padding: 20px;
+  }
+  
+  .consultation-summary {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .consultation-summary:hover {
+    background-color: #eaeaea;
+  }
+  
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal-content h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #34495e;
+    font-size: 24px;
+  }
+  
+  .chat-history {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .chat-message {
+    display: flex;
+    margin-bottom: 15px;
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    position: relative;
+  }
+  
+  .user-message {
+    background-color: #4caf50; /* 사용자의 말풍선 색상: 녹색 */
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+    text-align: left;
+    border-top-right-radius: 0;
+  }
+  
+  .user-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #4caf50; /* 말풍선 꼬리 색상 */
+    border-right: 10px solid transparent;
+  }
+  
+  .vet-message {
+    background-color: #007bff; /* 수의사의 말풍선 색상: 파란색 */
+    color: white;
+    align-self: flex-start;
+    text-align: left;
+    border-top-left-radius: 0;
+  }
+  
+  .vet-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #007bff; /* 말풍선 꼬리 색상 */
+    border-left: 10px solid transparent;
+  }
+
+  .sent-image {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .close-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    margin: 20px auto 0 auto; /* 가운데 정렬 */
+  }
+  
+  .close-button:hover {
+    background-color: #c0392b;
+  }
+  
+  .modal-content button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    margin: 20px auto 0 auto; /* 가운데 정렬 */
+  }
+  
+  .modal-content button:hover {
+    background-color: #0056b3;
+  }
+
+  /* 페이징 스타일 */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button.active {
+  background-color: #0056b3;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,138 @@
+/* 게시물 헤더 (제목 및 날짜) */
+.post-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.post-title {
+  font-size: 32px;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+.detail_title {
+  background-color: #f9f9f9;
+}
+
+.post-date {
+  font-size: 14px;
+  color: #888888;
+}
+
+/* 게시물 이미지 */
+.post-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 게시물 내용 */
+.post-content {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 30px;
+}
+
+
+  /* 답글 목록 스타일 */
+.replies {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.replies ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.replies li {
+  margin: 0px;
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.replies li:last-child {
+  border-bottom: none;
+}
+
+  /* 댓글 작성자와 내용 함께 표시 */
+.reply-author-and-text {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* 작성자와 내용 사이 간격 */
+}
+
+.reply-author {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+/* 수의사 색상 */
+.reply-author.vet {
+  color: #007bff;
+}
+
+/* 수의대생 색상 */
+.reply-author.student {
+  color: #28a745;
+}
+
+.reply-text {
+  font-size: 16px;
+  color: #555555;
+  margin-left: 5px; /* 내용과 작성자 사이 최소 간격 */
+}
+
+.reply-date {
+  margin-right: 10px;
+}
+
+/* 답글 입력 필드 스타일 */
+textarea {
+  width: 97%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  align-content: center;
+}
+
+/* 버튼 스타일 */
+.button_detail {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 238px;
+}
+
+.button_detail:hover {
+  background-color: #0056b3;
+}
+
+.button_backback {
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.button_backback:hover {
+  background-color: #0056b3;
+}

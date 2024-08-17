@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'GmarketSansMedium';
+}
+
+button, input, select, textarea, div {
+  font-family: 'GmarketSansMedium';
+}
+
+.frame1 {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFDF9;
+
+  padding-block: 60px; /* 헤더와 푸터의 높이만큼 상하 패딩 추가 */
+ /* min-height: 100vh;  최소 높이를 뷰포트 높이로 설정 */
+}
+
+.main_title{
+  padding: 1rem 0.5rem;
+  font-size: x-large;
+  font-weight: bold;
+  
+}

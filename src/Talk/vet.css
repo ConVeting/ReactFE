@@ -1,0 +1,405 @@
+/* vet_list.css */
+.vet-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history-button-and-title{
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vet-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.vet-list li {
+  width: 90%;
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  max-width: 600px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vet-list li:hover {
+  background-color: #f0f0f0;
+}
+
+
+.vet-info-container {
+  display: flex;
+  align-items: center;
+}
+
+.vet-photo {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.vet-details {
+  flex: 1;
+}
+
+
+.vet-buttons {
+  margin-top: 10px;
+}
+
+.vet_detail {
+  margin-left:25px;
+}
+
+.button_chat {
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button_chat:hover {
+  background-color: #0056b3;
+}
+
+.button_call {
+  margin-left: 20px;
+  padding: 10px;
+  
+  margin-right: 20px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button_call:hover {
+  background-color: #218838;
+}
+
+.history-button-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.history-button {
+  padding: 10px 20px;
+  background-color: #d1b898;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.history-button:hover {
+  background-color: #c09750;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  /* vet_talk.css */
+  .consultation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .vet-info {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .chat-container {
+    width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-box {
+    padding: 20px;
+    background-color: white;
+    height: 400px;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #f4f4f4;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  .chat-input input[type="file"] {
+    display: none;
+  }
+  
+  .chat-input label {
+    display: inline-block;
+    padding: 12px;
+    font-size: 20px;
+    background-co0lor: #f4f4f4;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .chat-input label:hover {
+    background-color: #0056b3;
+  }
+  
+  .chat-input button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .chat-input button:hover {
+    background-color: #0056b3;
+  }
+  
+  .chat-date {
+    text-align: left;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .chat-message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    position: relative;
+  }
+  
+  .user-message {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+    text-align: left;
+    border-radius: 10px 10px 0 10px;
+  }
+  
+  .vet-message {
+    background-color: #ecf0f1;
+    color: #333;
+    align-self: flex-start;
+    text-align: left;
+    border-radius: 10px 10px 10px 0;
+  }
+  
+  .message-time {
+    font-size: 12px;
+    color: #555;
+    margin-left: 10px;
+    align-self: flex-end;
+  }
+  .button_back {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white; 
+    cursor: pointer;
+  }
+  
+  .button_back:hover {
+    background-color: #0056b3;
+  }
+
+  
+
+
+
+  /* vet_history.css */
+  .history-container {
+    padding: 20px;
+  }
+  
+  .consultation-summary {
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  .consultation-summary:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* 날짜를 오른쪽 아래에 위치시킴 */
+  .consultation-summary p {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    margin: 0;
+    font-size: 0.9em;
+    color: #888;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .modal-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .modal-content li {
+    margin-bottom: 10px;
+  }
+  
+  /* "Close" 버튼을 가운데에 위치시킴 */
+  .modal-content button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    margin: 20px auto 0 auto; /* 가운데 정렬 */
+  }
+  
+  .modal-content button:hover {
+    background-color: #0056b3;
+  }
+
+  
+
+
+
+
+
+  
+
+
+/* vet_zoom.css */
+.zoom-setup-container {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  text-align: center;
+  width: 60%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.button_zoom {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.button_zoom:hover {
+  background-color: #0056b3;
+}
+
+.zoom-link {
+  margin-top: 50px;
+}
+
+.zoom-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.zoom-link a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,18 @@
+/* 로그인과 회원가입의 폼 디자인(디스플레이) */
+.form_login_signup{
+    display: grid;
+    margin-inline: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+/* 로그인 회원가입 제목텍스트 */
+.title {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.center_text{
+    text-align: center;
+}

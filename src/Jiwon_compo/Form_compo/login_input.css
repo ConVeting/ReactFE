@@ -1,0 +1,14 @@
+/* 로그인과 회원가입에 사용하는 인풋 디자인 */
+.login_input_design {
+    width: 95%; /* 가로 폭을 100%로 설정 */
+    padding: 2.5%; /* 안쪽 여백 */
+    border: 1px solid #ccc; /* 테두리 색상 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    font-size: medium; /* 글자 크기 */
+    transition: border-color 0.3s; /* 테두리 색상 변화에 애니메이션 추가 */
+}
+
+.login_input_design:focus {
+    border-color: rgb(106, 106, 106); /* 포커스 시 테두리 색상 변경 */
+    outline: none; /* 기본 아웃라인 제거 */
+}

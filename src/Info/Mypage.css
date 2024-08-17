@@ -1,0 +1,76 @@
+.my-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .my-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tab:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .tab:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .tab.active {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .tab-content {
+    background-color: #ebebeb;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .user-info-section,
+  .dog-info-section {
+    line-height: 1.6;
+  }
+  
+  .dog-info {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .dog-info:last-child {
+    border-bottom: none;
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  h3 {
+    color: #4a90e2;
+    margin-bottom: 10px;
+  }
+  
+  strong {
+    font-weight: bold;
+  }

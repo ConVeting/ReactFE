@@ -1,0 +1,477 @@
+/* .frame {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f2f2f2;
+} */
+.clicked {
+  background-color: gold;
+}
+.frfr {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}  
+
+.blog_skin_tab {
+  float: left;
+  width: 50%;
+  text-align: center;
+  background-color: aquamarine;
+}
+.non-click {
+  background-color: gold;
+}
+
+.click {
+  background-color: orchid;
+}
+
+
+.blog_eye_tab {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+.non-click {
+  background-color: gold;
+}
+
+.click {
+  background-color: orchid;
+}
+
+
+.card {
+  width: 400px;
+  height: 600px;
+  margin: 100px auto;
+
+  box-shadow: 3px 3px 50px #e6e6e6;
+  /* box-shadow: 1px 1px 10px #000; */
+  /* box-shadow: offset x y blur color; */
+  /* offset x:는 얼마나, y:는 얼마나 blur:흐림정도는 얼마나 color:색은 어떤걸로*/
+
+  border-radius: 20px;
+  position: relative; /* 상대적인 값 */
+}
+
+.card-header {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-header h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-body input[type="search"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+  border-radius: 10px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.card-body a.search {
+  padding: 10px 15px 10px 15px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: tomato;
+  color: #fff;
+}
+
+.card-body div {
+  margin-top: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.card-body div div {
+  display: inline-block;
+  padding: 15px 10px 15px 10px;
+  margin: 0;
+  border: none;
+}
+
+.card-body .check ,.delete {
+  width: 5%;
+}
+
+.card-body .card_title {
+  width: 70%;
+  text-align: left;
+}
+
+.card-body .delete button {
+  background-color: #fff;
+  border: none;
+}
+
+.number {
+  padding: 10px;
+}
+
+.number li {
+  display: inline-block;
+}
+
+.number li a {
+  display: block; 
+  width: 40px;
+  /* text-align이 위로 올라간다 */
+  line-height: 40px;
+  border-radius: 10px;
+  margin: 3px;
+  margin-top: 20px;
+  box-shadow: 0 5px 10px #f1f1f1;
+}
+
+.number li a.active {
+  background-color: rgb(252, 212, 205);
+}
+
+.btn {
+  /* position: absolute; 는 절대적인 값으로 상대적인 값이 필요하다. */
+  /* 상대적인 값은 전체 영역을 담당하는 class="card"에 position: relative; 을 추가한다. */
+  position: absolute; /* 절대적인 값 */
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  margin: 10px 10px 20px 10px  ;
+}
+.btn a {
+  padding: 10px;
+  background-color: tomato;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.card-header1 {
+  padding: 10px;
+  text-align: center;
+}
+
+
+/* write.html */
+.card-header1 h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.card-write {
+  padding: 10px;
+}
+
+.card_check{
+  text-align: center;
+}
+
+.card-write input{
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #e6e6e6;
+}
+
+.file {
+  margin-left: 10px;
+}
+
+.card-write .card_title textarea {
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  min-width: 85.5%;
+  max-width: 85.5%;
+  box-shadow: inset 3px 3px 10px #e6e6e6;
+  /* vertical-align: 텍스트를 수직, 수평 정렬 할 수 있다. */
+  vertical-align: top;
+}
+
+.msg {
+  margin-top: 20px;
+}
+
+.part {
+  margin-bottom: 20px;
+ 
+}
+.button_upload {
+  margin-top: 20px;
+}
+.card-write .msg textarea {
+  /* margin-top: 20px; */
+  margin-left: 10px;
+  padding: 10px;
+  
+  min-width: 85.5%;
+  max-width: 85.5%;
+  min-height: 200px;
+  max-height: 200px;
+  border: 1px solid #999;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #e6e6e6;
+  /* vertical-align: 텍스트를 수직, 수평 정렬 할 수 있다. */
+  vertical-align: top;
+}
+
+
+.button_upload {
+  background-color: #007bff;
+  padding: 10px;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10fr;
+}
+/* .btn-w {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  margin: 10px 10px 20px 10px;
+  padding: 10px;
+} */
+
+.tabs {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* 각각의 탭 */
+.tab {
+  flex: 1;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* 마지막 탭의 오른쪽 여백 제거 */
+.tab:last-child {
+  margin-right: 0;
+}
+
+/* 탭 활성화 상태 */
+.tab.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+/* 탭에 마우스 오버 시 */
+/* .tab:hover {
+  background-color: #e2e2e2;
+} */
+
+.tab_content {
+  background-color: white;
+}
+
+.tab_content h3, .tab_content p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 게시물 텍스트는 여러 줄로 표시되면서 생략되게 하고 싶다면 */
+.tab_content p {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 최대 3줄까지 표시 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* .post-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.post-link:hover {
+  background-color: #f9f9f9;
+} */
+
+/* 게시물 목록에서 링크 스타일 */
+.post-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.post-link:hover {
+  background-color: #f9f9f9;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 10px; /* 각 게시물 간의 간격 조정 */
+}
+
+/* 타임스탬프와 댓글 수를 정렬하는 스타일 */
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.post-meta small {
+  color: #888;
+}
+
+/* 댓글 수를 연한 박스 모양으로 스타일링 */
+.post-meta p {
+  margin: 0;
+  padding: 5px 10px;
+  color: black;
+  background-color: #f0f8ff;
+  border: 1px solid #007bff;
+  border-radius: 15px;
+  font-size: 14px;
+  text-align: center;
+  min-width: 70px;
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #007bff;
+  background-color: #f0f8ff;
+  color: #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.image-upload {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 14px;
+  margin-left: 10px;
+}
+
+.image-upload-label {
+  width: 40%;
+  color: black;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.image-upload-label:hover {
+
+}
+
+.image-upload input[type="file"] {
+  display: none;
+}
+
+.image-preview {
+  margin-left: 15px;
+  max-height: 50px;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 타임스탬프 스타일 */
+.post-detail-container small {
+  display: block;
+  font-size: 12px;
+  color: #888888;
+  margin-bottom: 20px;
+}
+
+/* 댓글 섹션 헤더 */
+.post-detail-container h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+/* 답글 목록 */
+.replies {
+  margin-top: 30px;
+}
+
+.replies h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+.replies ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.replies li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.replies li span.reply-text {
+  font-size: 14px;
+  color: #555555;
+}
+
+.replies li span.reply-date {
+  font-size: 12px;
+  color: #888888;
+  white-space: nowrap;
+}

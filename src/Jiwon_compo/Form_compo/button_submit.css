@@ -1,0 +1,148 @@
+/* 로그인과 회원가입 페이지에서 submit 버튼 디자인 */
+.btn_login_submit {
+    padding: 0.5em 1em; /* 안쪽 여백 */
+    border: none; /* 테두리 제거 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    background-color: rgb(91, 145, 207); /* 배경 색상 */
+    color: white; /* 글자 색상 */
+    font-size: medium; /* 글자 크기 */
+    font-weight: bold;
+    cursor: pointer; /* 커서 모양 변경 */
+    transition: background-color 0.3s, transform 0.2s; /* 배경 색상과 크기 변화에 애니메이션 추가 */
+}
+.btn_login_submit:hover {
+    background-color: rgb(77, 122, 173); /* 호버 시 배경 색상 변경 */
+}
+
+.btn_login_submit:active {
+    transform: scale(0.98); /* 클릭 시 약간 작아지는 효과 */
+}
+
+/* 로그인과 회원가입 창으로 이동하는 버튼 */
+.btn_login {
+    width: 100%;
+    border: none;
+    background: none;
+    font-size: medium;
+    font-weight: bold;
+    color: #4a90e2;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0;
+}
+
+.btn_login:hover {
+    color: #357abd;
+  }
+
+/* 헤더의 프로필 부분 (회원이름+현재 강아지+로그인아웃버튼) */
+.header_profile {
+    display: flex;
+    gap: 0.4rem;
+}
+
+/* 헤더의 프로필 안의 요소*/
+.header_profile > * {
+    /* margin-left: 0.5rem; */
+    /* align-content: center; */
+    font-size: small;
+    font-weight: bold;
+}
+/* 한국어가 조금 이상함 */
+.header_profile_username {
+    max-width: 120px;
+    white-space: nowrap;        /* 줄 바꿈 방지 */
+    /* overflow: hidden;           */
+    text-overflow: ellipsis;   /* 생략 기호 표시 */
+    display: flex;
+    align-items: center;
+    gap: 0.2rem; /*유저 아이콘과 사이 */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.header_profile_username:hover {
+    color: #4a90e2;
+}
+
+/* 커스텀 셀렉트 스타일(전체 영역) */
+.custom_select {
+    width: 80px;
+    position: relative;
+}
+/* 셀렉트 (헤드바 위) */
+.select_button {
+    width: 100%;
+    min-width: 80px;
+    white-space: nowrap;        /* 줄 바꿈 방지 */
+    overflow: hidden;           /* 넘치는 내용 숨기기 */
+    text-overflow: ellipsis;   /* 생략 기호 표시 */
+    
+    padding: 0.5rem 0.3rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    /* 아이콘 삽입하려면 주석 풀기 */
+    /* display: flex;
+    justify-content: space-between; 
+    align-items: center;*/
+}
+
+.select_button:hover {
+    background-color: #e0e0e0;
+}
+
+/* 셀렉트 드롭다운 */
+.select_dropdown {
+    position: absolute;
+    /* top: 100%;
+    left: 0; */
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.select_item {
+    white-space: nowrap;        /* 줄 바꿈 방지 */
+    overflow: hidden;           /* 넘치는 내용 숨기기 */
+    text-overflow: ellipsis;   /* 생략 기호 표시 */
+    padding: 0.5rem 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select_item:hover {
+background-color: #f0f0f0;
+}
+
+.add_dog {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+color: #4a90e2;
+}
+
+.btn_logout {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+background: none;
+border: none;
+color: #e74c3c;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+transition: color 0.3s;
+}
+
+.btn_logout:hover {
+color: #c0392b;
+}
