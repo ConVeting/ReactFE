@@ -77,6 +77,16 @@
               "timestamp": "2024-08-16T11:27:18.189Z"
             }
           ]
+        },
+        {
+          "id": "1724045660650",
+          "name": "줄리엣",
+          "breed": "비숑",
+          "age": "9",
+          "weight": "3",
+          "gender": "female",
+          "isNeutered": false,
+          "allergies": ","
         }
       ],
       "selectedDog": "1723804847494"
