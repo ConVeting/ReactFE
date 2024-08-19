@@ -1,91 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import axios from 'axios';
-import { useUser } from '../User_Context';
 import './ai_result.css';
+import nonImage from "../Image/Non_Image.png";
 
 export default function ResultPage() {
   const location = useLocation();
-  const { id, dogId } = location.state || {}; // 결과 ID와 강아지 ID를 받아옴
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const { user } = useUser();
+  const { id, dogId, type, image, disease1, symptom1, cure1, prob1, disease2, symptom2, cure2, prob2 } = location.state || {}; // 결과 ID와 강아지 ID를 받아옴
 
-  useEffect(() => {
-    const fetchResult = async () => {
-      if (!user || !dogId) {
-        setLoading(false);
-        return;
-      }
+  // 정적인 검사 일시를 상태로 저장 (날짜, 시간, 분까지 표시)
+  const [staticTimestamp] = useState(new Date().toLocaleString([], {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+  }));
 
-      try {
-        const dog = user.dogs.find(d => d.id === dogId);
-        if (!dog) {
-          console.error('강아지를 찾을 수 없습니다.');
-          setLoading(false);
-          return;
-        }
-
-        const foundResult = dog.results.find(r => r.id === id);
-        if (foundResult) {
-          setResult(foundResult);
-        } else {
-          console.error('결과를 찾을 수 없습니다.');
-        }
-      } catch (error) {
-        console.error('결과 조회 실패:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchResult();
-  }, [user, id, dogId]);
-
-  // 로딩 페이지 추후 디테일 구현 필요
-  if (loading) {
-    return <div>결과를 불러오는 중...</div>;
-  }
-
-  if (!result) {
-    return <div>결과를 찾을 수 없습니다.</div>;
-  }
-
-  const { type, image, timestamp, result: analysisResult } = result;
-  const dog = user.dogs.find(d => d.id === dogId);
-  const topTwoDiseases = analysisResult.diseases;
-
-  // type에 따른 한국어 변환
-  const typeTranslations = {
-    eye: '안구',
-    skin: '피부',
-  };
-  const type_kr = typeTranslations[type] || type; // 기본값으로 type 사용
+  const topTwoDiseases = [
+    { name: disease1, probability: Math.floor(prob1), symptoms: symptom1, treatment: cure1 },
+    { name: disease2, probability: Math.floor(prob2), symptoms: symptom2, treatment: cure2 }
+  ];
 
   return (
     <div className="result-page">
-      <div className='main_title'>{dog ? dog.name : '알 수 없는 강아지'}의 {type_kr} 건강 체크 결과</div>
-      <div className="result-image">
-        <img src={image} alt={`${dog ? dog.name : '강아지'}의 ${type}`} />
-      </div>
+      {/* 결과 정보 */}
       <div className="result-info">
-        <p>검사 일시: {new Date(timestamp).toLocaleString()}</p>
-        <p>강아지: {dog ? dog.name : '알 수 없음'}</p>
-        <p>견종: {dog ? dog.breed : '알 수 없음'}</p>
-        <p>나이: {dog ? dog.age : '알 수 없음'}</p>
-        <p>검사 유형: {type_kr}</p>
+        <p>검사 일시: {staticTimestamp}</p> {/* 날짜, 시간, 분까지 표시 */}
       </div>
+
+      {/* 진단 결과 */}
       <div className="result-diagnosis">
         <h2>진단 결과</h2>
-        {analysisResult.isNormal ? (
+        {topTwoDiseases.length === 0 ? (
           <p>정상입니다.</p>
         ) : (
           <>
-            <p>상위 세 가지 질환:</p>
+            <div className="result-image">
+              <img src={image || nonImage} alt={`${type} 이미지`} />
+            </div>
+
+            <p>상위 두 가지 질환:</p>
             <ul>
               {topTwoDiseases.map((disease, index) => (
                 <li key={index}>
-                  <h3>{disease.name} ({disease.probability}%)</h3>
+                  <h3>{disease.name} {disease.probability}%</h3>
                   <p>주요 증상: {disease.symptoms}</p>
                   <p>대처법: {disease.treatment}</p>
                 </li>

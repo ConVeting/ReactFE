@@ -87,6 +87,26 @@
           "gender": "female",
           "isNeutered": false,
           "allergies": ","
+        },
+        {
+          "id": "1724065868796",
+          "name": "asd",
+          "breed": "asd",
+          "age": "4",
+          "weight": "5",
+          "gender": "male",
+          "isNeutered": true,
+          "allergies": "."
+        },
+        {
+          "id": "1724066628802",
+          "name": "땅강아지",
+          "breed": "시고르자브종",
+          "age": "2",
+          "weight": "2",
+          "gender": "male",
+          "isNeutered": true,
+          "allergies": "없음"
         }
       ],
       "selectedDog": "1723804847494"
@@ -155,6 +175,26 @@
           ]
         }
       ]
+    },
+    {
+      "id": "학생",
+      "name_user": "수의사",
+      "password": "1234"
+    },
+    {
+      "id": "ㅁㄴㅇ",
+      "name_user": "ㅁㄴㅇ",
+      "password": "ㅁㄴㅇ"
+    },
+    {
+      "id": "conveting",
+      "name_user": "수의사",
+      "password": "1234"
+    },
+    {
+      "id": "Conveting",
+      "name_user": "수의사",
+      "password": "1234"
     }
   ]
 }

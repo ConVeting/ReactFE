@@ -89,7 +89,7 @@ export default function Ai_main() {
   const saveImgFile = () => {
     if (imgRef.current.files.length === 0) return; //선택된 파일 없으면 종료
     const file = imgRef.current.files[0]; //첫 번째 파일 가져옴
-    const reader = new FileReader(); 
+    const reader = new FileReader();
     reader.readAsDataURL(file); //파일 DataURL 형식으로 읽기 시작 -> 이미지 파일을 Base64로 인코딩하여 문자열로 변환
     reader.onloadend = () => { //읽기 완료 후 실행될 함수
       setImgFile(reader.result); //결과 상태에 저장
@@ -99,76 +99,86 @@ export default function Ai_main() {
   //이미지 사진 제출 버튼
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //모든 항목 선택 후 업로드 가능
+
+    // 모든 항목 선택 후 업로드 가능
     if (!selectedDog || !selectedType || !imgFile) {
       setMessage("모든 항목을 선택하고 이미지를 업로드해주세요.");
       return;
     }
 
     try {
-      // 더미 데이터 생성
-      const dummyResult = generateDummyData(selectedDog, selectedType);
-      
-      // 선택된 강아지 찾기
-      const dogIndex = user.dogs.findIndex(dog => dog.id === selectedDog);
-      if (dogIndex === -1) {
-        setMessage("선택된 강아지를 찾을 수 없습니다.");
-        return;
-      }
+      // FormData 객체 생성
+      const formData = new FormData();
+      formData.append('owner', 'testuser');
+      formData.append('pet', selectedDog);  // 선택된 강아지 ID
+      formData.append('part', selectedType);  // 선택된 분석 유형
+      formData.append('photo', imgRef.current.files[0]);  // 업로드된 이미지 파일
 
-      // 새로운 결과 객체 생성
+      // 서버에 POST 요청 보내기
+      const response = await axios.post('http://localhost:8000/diagnosis/description/', formData);
+
+      console.log('분석 요청 성공:', response.data);
+      setMessage("분석 요청이 성공적으로 전송되었습니다!");
+
+      // 사용자 정보 업데이트 (더미 데이터)
+      const dummyResult = generateDummyData(selectedDog, selectedType);
+      // const dogIndex = user.dogs.findIndex(dog => dog.id === selectedDog);
       const newResult = {
         id: Date.now().toString(),
         type: selectedType,
-        image: imgFile,
+        image: imgFile,  // Ensure this is the correct Base64 string
         result: dummyResult,
         timestamp: new Date().toISOString()
       };
 
-      // 사용자 정보 업데이트
-      const updatedUser = { ...user };
-      if (!updatedUser.dogs[dogIndex].results) {
-        updatedUser.dogs[dogIndex].results = [];
-      }
-      updatedUser.dogs[dogIndex].results.push(newResult);
 
-      // 서버에 업데이트된 사용자 정보 저장
-      const response = await axios.put(`http://localhost:3001/users/${user.id}`, updatedUser);
-      
-      console.log('분석 요청 성공:', response.data);
-      setMessage("분석 요청이 성공적으로 전송되었습니다!");
+      // const updatedUser = { ...user };
+      // if (!updatedUser.dogs[dogIndex].results) {
+      //   updatedUser.dogs[dogIndex].results = [];
+      // }
+      // updatedUser.dogs[dogIndex].results.push(newResult);
+      // updateUser(updatedUser);
 
-      // 사용자 정보 업데이트
-      updateUser(updatedUser);
-
-      // 결과 데이터를 포함하여 결과 페이지로 이동
+      // 결과 페이지로 이동
       move_ai_result({
         id: newResult.id,
-        dogId: selectedDog
+        // dogId: selectedDog,
+        image: imgFile,
+        type: selectedType,
+        disease1: response.data.diagnoses[0].disease,
+        symptom1: response.data.diagnoses[0].symptom,
+        cure1: response.data.diagnoses[0].cure,
+        prob1: response.data.diagnoses[0].probability,
+        disease2: response.data.diagnoses[1].disease,
+        symptom2: response.data.diagnoses[1].symptom,
+        cure2: response.data.diagnoses[1].cure,
+        prob2: response.data.diagnoses[1].probability,
       });
     } catch (error) {
-      console.error('분석 요청 실패:', error);
       setMessage("분석 요청 중 오류가 발생했습니다. 다시 시도해주세요.");
+      console.error('분석 요청 실패:', error);
     }
   };
 
-  return (     
+
+  return (
     <div className='frame'>
       <div className='main_title'>AI Health Check</div>
       <form className='form_Ai_image_upload' onSubmit={handleSubmit}>
         <div className='select-container'>
-          <select 
-            value={selectedDog} 
+          <select
+            value={selectedDog}
             onChange={(e) => setSelectedDog(e.target.value)}
             className='select-dog'
           >
             <option value="">강아지 선택</option>
+            <option value="FEdog">개</option>
             {user && user.dogs && user.dogs.map(dog => (
               <option key={dog.id} value={dog.id}>{dog.name}</option>
             ))}
           </select>
-          <select 
-            value={selectedType} 
+          <select
+            value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
             className='select-type'
           >
@@ -190,7 +200,7 @@ export default function Ai_main() {
         <input
           className='Ai_image_upload_input'
           type='file'
-          accept='.png, .jpg'
+          accept='.png, .jpg, .jpeg'
           id='Ai_image'
           onChange={saveImgFile}
           ref={imgRef}
