@@ -34,14 +34,14 @@ const LoginForm = () => {
   return (
     <div className='contents_padding'>
       <form className="form_login_signup" onSubmit={handleSubmit}>
-        <div className='title' style={{textAlign:'center'}} >
-          <img src={Logo} alt="컨벳팅" 
+        <div className='title' style={{ textAlign: 'center' }} >
+          <img src={Logo} alt="컨벳팅"
             style={{
-              maxWidth: '300px', 
+              maxWidth: '300px',
               width: '60%',
               height: 'auto',
               cursor: 'pointer',
-            }} 
+            }}
           />
           <div>Log In</div>
         </div>
@@ -53,8 +53,8 @@ const LoginForm = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button_submit text="로그인"/>
-        <Button_Signup/>
+        <Button_submit text="로그인" />
+        <Button_Signup />
       </form>
       {message && <p className='center_text'>{message}</p>}
     </div>

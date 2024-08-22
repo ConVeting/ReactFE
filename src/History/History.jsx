@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useUser } from '../User_Context';
 import { Trash } from 'lucide-react';
 import './History.css';
@@ -23,7 +23,7 @@ const ResultCard = ({ result, onDelete }) => {
         <h2>{result.dogName}의 {result.type === 'eye' ? '안구' : '피부'} 검사</h2>
         <button onClick={handleDelete} className="delete-button"><Trash size={18} /></button>
       </div>
-      <p>검사 일시: {new Date(result.timestamp).toLocaleString()}</p>
+      <p>검사 일시: {new Date(result.timestamp).toLocaleDateString()}</p>
       <img src={result.image} alt={`${result.dogName}의 ${result.type} 검사`} className="result-image-history" />
       <button onClick={toggleDetails} className="detail-button">
         {showDetails ? '상세 결과 닫기' : '상세 결과 보기'}
@@ -35,7 +35,7 @@ const ResultCard = ({ result, onDelete }) => {
             <p>정상입니다.</p>
           ) : (
             <>
-              <p>상위 세 가지 질환:</p>
+              <p>상위 두 가지 질환:</p>
               <ul>
                 {result.result.diseases.slice(0, 3).map((disease, index) => (
                   <li key={index}>
@@ -59,19 +59,17 @@ const ResultsPage = () => {
   const [selectedType, setSelectedType] = useState('all');
   const [filteredResults, setFilteredResults] = useState([]);
 
-  useEffect(() => {
-    if (user) {
-      filterResults();
-    }
-  }, [user, selectedDog, selectedType]);
+  const filterResults = useCallback(() => {
 
-  const filterResults = () => {
     if (!user || !user.dogs) {
       setFilteredResults([]);
       return;
     }
 
     let results = [];
+
+
+
     user.dogs.forEach(dog => {
       if (dog.results) {
         dog.results.forEach(result => {
@@ -89,7 +87,15 @@ const ResultsPage = () => {
     }
 
     setFilteredResults(results);
-  };
+  }, [user, selectedDog, selectedType]);
+
+
+  useEffect(() => {
+    if (user) {
+      filterResults();
+    }
+  }, [user, selectedDog, selectedType, filterResults]);  // 여기에 filterResults 추가
+
 
   const handleDeleteResult = (resultId) => {
     if (!user || !user.dogs) return;

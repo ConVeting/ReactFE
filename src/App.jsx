@@ -1,7 +1,7 @@
 import React from 'react';
-import { Routes, Route, useLocation, useNavigate, Link } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import "./App.css";
-import { useUser, UserProvider } from './User_Context';
+import { UserProvider } from './User_Context';
 
 //앱 헤더 푸터
 import App_header from './app_header.jsx';
@@ -36,45 +36,45 @@ import MyPage from './Info/Info_main.jsx';
 //로케이션 훅은 함수에만 가능해서 함수로 변경
 const App = () => {
 
-    const location = useLocation(); // 현재 경로를 가져오기
-    // 현재 경로에 따라 활성화 상태 설정
-    const activeRoute = location.pathname;
+  const location = useLocation(); // 현재 경로를 가져오기
+  // 현재 경로에 따라 활성화 상태 설정
+  const activeRoute = location.pathname;
 
-    return (
-      <UserProvider>
-        <div className='frame1'>
-          <App_header />
-          <Routes>
-            {/* 로그인 회원가입 */}
-            <Route path='/Login/login' element={<LoginForm/>} />
-            <Route path='/Login/signup' element={<SignUpForm/>} />
-            {/* 강아지 등록(추가) */}
-            <Route path='/Register/plusdog' element={<DogRegistrationForm/>} />
+  return (
+    <UserProvider>
+      <div className='frame1'>
+        <App_header />
+        <Routes>
+          {/* 로그인 회원가입 */}
+          <Route path='/Login/login' element={<LoginForm />} />
+          <Route path='/Login/signup' element={<SignUpForm />} />
+          {/* 강아지 등록(추가) */}
+          <Route path='/Register/plusdog' element={<DogRegistrationForm />} />
 
-            {/* 푸터 항목 */}
-            {/* 1. 홈 */}
-            <Route path='/Home' element={<Home />} />
-            {/* 2. AI 진단 */}
-            <Route path='/Ai/ai_main' element={<Ai_main />} />
-            <Route path='/Ai/ai_result' element={<ResultPage />} />
-            {/* ++ 수의사 상담 */}
-            <Route path='/Talk/vet_list' element={<Vet_list/>} />
-            <Route path='/Talk/vet_talk/:id' element={<Vet_talk />} />
-            <Route path='/Talk/vet_zoom' element={<Vet_zoom />} />
-            <Route path='/Talk/vet_history' element={<Vet_history />} />
-            {/* 3. 기록 */}
-            <Route path='/History' element={<History />} />
-            {/* 4. 커뮤니티 */}
-            <Route path='/Blog/postform' element={<PostForm />} />
-            <Route path='/Blog/postlist' element={<PostList />} />
-            <Route path='/Blog/:id' element={<Postdetail />} />
-            {/* 5. 마이페이지 */}
-            <Route path='/Info/mypage' element={<MyPage />} />
-          </Routes>
-          <App_footer activeRoute={activeRoute} /> {/* 현재 경로를 App_footer에 전달 */}
-        </div>
-      </UserProvider>
-    );
-  
+          {/* 푸터 항목 */}
+          {/* 1. 홈 */}
+          <Route path='/Home' element={<Home />} />
+          {/* 2. AI 진단 */}
+          <Route path='/Ai/ai_main' element={<Ai_main />} />
+          <Route path='/Ai/ai_result' element={<ResultPage />} />
+          {/* ++ 수의사 상담 */}
+          <Route path='/Talk/vet_list' element={<Vet_list />} />
+          <Route path='/Talk/vet_talk/:id' element={<Vet_talk />} />
+          <Route path='/Talk/vet_zoom' element={<Vet_zoom />} />
+          <Route path='/Talk/vet_history' element={<Vet_history />} />
+          {/* 3. 기록 */}
+          <Route path='/History' element={<History />} />
+          {/* 4. 커뮤니티 */}
+          <Route path='/Blog/postform' element={<PostForm />} />
+          <Route path='/Blog/postlist' element={<PostList />} />
+          <Route path='/Blog/:id' element={<Postdetail />} />
+          {/* 5. 마이페이지 */}
+          <Route path='/Info/mypage' element={<MyPage />} />
+        </Routes>
+        <App_footer activeRoute={activeRoute} /> {/* 현재 경로를 App_footer에 전달 */}
+      </div>
+    </UserProvider>
+  );
+
 }
 export default App;
