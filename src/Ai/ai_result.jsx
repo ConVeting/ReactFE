@@ -1,3 +1,4 @@
+//AI 진단 결과 조회 페이지
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './ai_result.css';

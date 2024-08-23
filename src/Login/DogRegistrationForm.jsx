@@ -3,8 +3,8 @@ import axios from 'axios';
 import { useUser } from '../User_Context';
 import { useNavigate } from 'react-router-dom';
 import './DogRegistration.css';
-import { InputField } from '../Jiwon_compo/Form_compo/login_input';
-import { Button_submit } from '../Jiwon_compo/Form_compo/button_submit';
+import { InputField } from '../Component/Form_compo/login_input';
+import { Button_submit } from '../Component/Form_compo/button_submit';
 
 const DogRegistrationForm = () => {
   const [dogName, setDogName] = useState('');

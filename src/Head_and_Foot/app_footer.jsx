@@ -4,7 +4,7 @@ import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 import { Camera, Heart, Home, Clock, User } from 'lucide-react';
 import "./App.css";
 import "./app_footer.css";
-import { useNavigationHandlers } from './Navigate';
+import { useNavigationHandlers } from '../Navigate';
 
 //앱 푸터
 const NavItem = ({ icon, label, onClick, isActive = false }) => (

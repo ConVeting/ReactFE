@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useUser } from '../User_Context'; // UserContext에서 useUser 훅을 가져옵니다.
 import { useNavigate } from 'react-router-dom'; // 로그인 후 페이지 이동을 위해 사용합니다.
-import { InputField_id_login, InputField_pwd_login } from '../Jiwon_compo/Form_compo/login_input';
-import { Button_submit, Button_Signup } from '../Jiwon_compo/Form_compo/button_submit';
+import { InputField_id_login, InputField_pwd_login } from '../Component/Form_compo/login_input';
+import { Button_submit, Button_Signup } from '../Component/Form_compo/button_submit';
 import './Login_Signup.css'
 import Logo from '../Image/Logo.png'
 

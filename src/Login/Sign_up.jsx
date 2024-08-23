@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { InputField, InputField_id_login, InputField_pwd_login } from '../Jiwon_compo/Form_compo/login_input';
-import { Button_submit, Button_Login } from '../Jiwon_compo/Form_compo/button_submit';
+import { InputField, InputField_id_login, InputField_pwd_login } from '../Component/Form_compo/login_input';
+import { Button_submit, Button_Login } from '../Component/Form_compo/button_submit';
 import Logo from '../Image/Logo.png'
 import './Login_Signup.css'
 

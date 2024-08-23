@@ -1,3 +1,4 @@
+//AI 진단 페이지
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigationHandlers } from '../Navigate';
 import axios from 'axios';
@@ -5,66 +6,6 @@ import { useUser } from '../User_Context';
 import "./ai_main.css";
 //이미지 업로드 이전 기본 이미지
 import nonImage from "../Image/Non_Image.png";
-
-// 질병 더미 데이터 생성 함수, 실제로는 ai 진단 결과가 될 예정
-const generateDummyData = (dog, type) => {
-  const isNormal = Math.random() > 0.8;
-  const diseases = [
-    {
-      name: "피부염",
-      probability: Math.floor(Math.random() * 50) + 50,
-      symptoms: "가려움, 붉은 반점, 탈모",
-      treatment: "항생제 처방, 특수 샴푸 사용"
-    },
-    {
-      name: "알레르기",
-      probability: Math.floor(Math.random() * 40) + 30,
-      symptoms: "재채기, 눈물, 피부 발진",
-      treatment: "알레르겐 회피, 항히스타민제 투여"
-    },
-    // {
-    //   name: "농포 여드름",
-    //   probability: Math.floor(Math.random() * 40) + 30,
-    //   symptoms: "가려움증, 이차적인 세균 감염",
-    //   treatment: "항균 용액으로 청소, 국소 혹은 경구 항생제 사용"
-    // },
-    // {
-    //   name: "미란/궤양",
-    //   probability: Math.floor(Math.random() * 40) + 30,
-    //   symptoms: "통증을 유발, 붉고 염증이 있으며 감염의 위험이 있다.",
-    //   treatment: "보호 연고 사용하고 항생제 사용"
-    // }
-    {
-      name: "결막염",
-      probability: Math.floor(Math.random() * 30) + 20,
-      symptoms: "눈 충혈, 눈곱 증가",
-      treatment: "안약 처방, 따뜻한 압박"
-    },
-    // {
-    //   name: "결막염2",
-    //   probability: Math.floor(Math.random() * 30) + 20,
-    //   symptoms: "눈 충혈, 눈곱 초증가",
-    //   treatment: "안약 처방, 따뜻한 압박"
-    // },
-    // {
-    //   name: "결막염3",
-    //   probability: Math.floor(Math.random() * 30) + 20,
-    //   symptoms: "눈 충혈, 눈곱 울츠라증가",
-    //   treatment: "안약 처방, 따뜻한 초초 압박"
-    // },
-    {
-      name: "안검내반증",
-      probability: Math.floor(Math.random() * 30) + 20,
-      symptoms: "눈꺼풀이 말려들어가 문지르게 되어 궤양 유발",
-      treatment: "수술을 통해 눈꺼풀 위치 교정, 윤활제 역할을 하는 안약"
-    }
-  ];
-
-  return {
-    isNormal,
-    diseases: isNormal ? [] : diseases.sort(() => Math.random() - 0.5).slice(0, 3)
-  };
-};
 
 export default function Ai_main() {
   //페이지 이동
@@ -131,14 +72,6 @@ export default function Ai_main() {
         timestamp: new Date().toISOString()
       };
 
-
-      // const updatedUser = { ...user };
-      // if (!updatedUser.dogs[dogIndex].results) {
-      //   updatedUser.dogs[dogIndex].results = [];
-      // }
-      // updatedUser.dogs[dogIndex].results.push(newResult);
-      // updateUser(updatedUser);
-
       // 결과 페이지로 이동
       move_ai_result({
         id: newResult.id,
@@ -166,6 +99,7 @@ export default function Ai_main() {
       <div className='main_title'>AI Health Check</div>
       <form className='form_Ai_image_upload' onSubmit={handleSubmit}>
         <div className='select-container'>
+          {/* 선택한 강아지를 setSelectedDog로 */}
           <select
             value={selectedDog}
             onChange={(e) => setSelectedDog(e.target.value)}
@@ -173,10 +107,12 @@ export default function Ai_main() {
           >
             <option value="">강아지 선택</option>
             <option value="FEdog">개</option>
+            {/* 유저의 강아지 목록 다 가져오기 */}
             {user && user.dogs && user.dogs.map(dog => (
               <option key={dog.id} value={dog.id}>{dog.name}</option>
             ))}
           </select>
+          {/* 선택한 분석 유형을 setSelectedType로 */}
           <select
             value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
@@ -194,6 +130,7 @@ export default function Ai_main() {
             alt="업로드된 이미지 미리보기"
           />
         </div>
+
         {/* 이미지 업로드 input */}
         {/* htmlFor을 이용해서 일치하는 id와 기능 연결 */}
         <label className='Ai_image_upload_label' htmlFor='Ai_image'>피부/안구 사진 업로드</label>
@@ -205,6 +142,7 @@ export default function Ai_main() {
           onChange={saveImgFile}
           ref={imgRef}
         />
+        {/* 분석요청(제출) 버튼 */}
         <button type="submit" className='submit-button'>분석 요청</button>
       </form>
       {message && <p className='message'>{message}</p>}

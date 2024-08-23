@@ -2,20 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import "./App.css";
 import"./flex.css";
-import Carousel from './Jiwon_compo/carousel';
+import Carousel from './Component/Carousel/carousel';
 import { useNavigationHandlers } from './Navigate';
 
-//회원가입, 로그인 test
-import SignUpForm from './Jiwon_Login/Sign_up';
-import LoginForm from './Jiwon_Login/Login_test';
-import UserProfile from './Jiwon_Login/UserProfile';
 //로그인 한번에 관리
 import { useUser } from './User_Context';
-import WeeklyCalendar2 from './cacaca/d1';
-import WeeklyCalendar from './Test2';
-// import Calendar2 from './cacaca/c1';
-// import CalendarApp from './Test';
-// import WeeklyCalendar from './Test2';
+//달력 임시 이미지
 import before from './Image/before_login_ca.png'
 import after from './Image/after_login_ca.png'
 

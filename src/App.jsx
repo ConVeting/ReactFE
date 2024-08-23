@@ -4,14 +4,14 @@ import "./App.css";
 import { UserProvider } from './User_Context';
 
 //앱 헤더 푸터
-import App_header from './app_header.jsx';
-import App_footer from './app_footer.jsx';
+import App_header from './Head_and_Foot/app_header.jsx'
+import App_footer from './Head_and_Foot/app_footer.jsx'
 
 //로그인 회원가입
-import LoginForm from './Jiwon_Login/Login_test.jsx';
-import SignUpForm from './Jiwon_Login/Sign_up.jsx';
+import LoginForm from './Login/Login_test.jsx';
+import SignUpForm from './Login/Sign_up.jsx';
 //강아지 등록(추가)
-import DogRegistrationForm from './Jiwon_Login/DogRegistrationForm.jsx';
+import DogRegistrationForm from './Login/DogRegistrationForm.jsx';
 
 //푸터 항목
 //1. 홈
