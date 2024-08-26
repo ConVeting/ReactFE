@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route, useNavigate, Link } from 'react-router-dom';
-import "./App.css";
+import "../App.css";
 import "./app_header.css"
 import { useUser } from '../User_Context';
-import Logo from './Image/Logo.png'
+import Logo from '../Image/Logo.png'
 import { Button_Loginstate } from '../Component/Form_compo/button_submit';
 import { useNavigationHandlers } from '../Navigate';
 

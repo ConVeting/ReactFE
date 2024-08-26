@@ -62,13 +62,13 @@ export default function Ai_main() {
       setMessage("분석 요청이 성공적으로 전송되었습니다!");
 
       // 사용자 정보 업데이트 (더미 데이터)
-      const dummyResult = generateDummyData(selectedDog, selectedType);
+      // const dummyResult = generateDummyData(selectedDog, selectedType);
       // const dogIndex = user.dogs.findIndex(dog => dog.id === selectedDog);
       const newResult = {
         id: Date.now().toString(),
         type: selectedType,
         image: imgFile,  // Ensure this is the correct Base64 string
-        result: dummyResult,
+        // result: dummyResult,
         timestamp: new Date().toISOString()
       };
 

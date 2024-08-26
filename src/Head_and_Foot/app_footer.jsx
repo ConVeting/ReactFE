@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 //아이콘 라이브러리
 import { Camera, Heart, Home, Clock, User } from 'lucide-react';
-import "./App.css";
+import "../App.css";
 import "./app_footer.css";
 import { useNavigationHandlers } from '../Navigate';
 
