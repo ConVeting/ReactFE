@@ -16,3 +16,20 @@
 .center_text{
     text-align: center;
 }
+
+/* 라디오 버튼 css */
+.user-type-selection {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.user-type-selection label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-type-selection input[type="radio"] {
+    margin-right: 5px;
+}

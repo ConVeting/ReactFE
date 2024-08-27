@@ -11,7 +11,7 @@ const SignUpForm = () => {
     const [password, setPassword] = useState(''); //비밀번호
     const [message, setMessage] = useState('');  //메세지
     const [isIdAvailable, setIsIdAvailable] = useState(null);
-    
+    const [userType, setUserType] = useState('regular'); // 회원 유형
     //id 중복 확인
     const checkIdAvailability = async (id) => {
         try {
@@ -47,7 +47,8 @@ const SignUpForm = () => {
           const response = await axios.post('http://localhost:3001/users', {
             id,
             name_user,
-            password
+            password,
+            userType
           });
           console.log('회원가입 성공:', response.data);
           setMessage('회원가입이 성공적으로 완료되었습니다!');
@@ -56,6 +57,7 @@ const SignUpForm = () => {
           setNameUser('');
           setPassword('');
           setIsIdAvailable(null);
+          setUserType('regular');
         } catch (error) {
           console.error('회원가입 실패:', error);
           setMessage('회원가입 중 오류가 발생했습니다. 다시 시도해주세요.');
@@ -91,8 +93,29 @@ const SignUpForm = () => {
               onChange={(e) => setNameUser(e.target.value)}
               placeholder="사용자 이름"
             />
+            <div className="user-type-selection">
+              <label>
+                  <input
+                      type="radio"
+                      value="regular"
+                      checked={userType === 'regular'}
+                      onChange={(e) => setUserType(e.target.value)}
+                  />
+                  일반회원
+              </label>
+              <label>
+                  <input
+                      type="radio"
+                      value="vet"
+                      checked={userType === 'vet'}
+                      onChange={(e) => setUserType(e.target.value)}
+                  />
+                  수의사
+              </label>
+            </div>
             <Button_submit text="회원가입"/>
             <Button_Login/>
+            
           </form>
           {message && <p className='center_text'>{message}</p>}
         </div>
