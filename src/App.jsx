@@ -33,6 +33,9 @@ import Postdetail from './Blog/postdetail.jsx';
 //5.마이페이지
 import MyPage from './Info/Info_main.jsx';
 
+// 수의사 회원 
+import Home_vet from './Home_vet.jsx';
+
 //로케이션 훅은 함수에만 가능해서 함수로 변경
 const App = () => {
 
@@ -45,6 +48,7 @@ const App = () => {
       <div className='frame1'>
         <App_header />
         <Routes>
+          {/* 일반 회원 */}
           {/* 로그인 회원가입 */}
           <Route path='/Login/login' element={<LoginForm />} />
           <Route path='/Login/signup' element={<SignUpForm />} />
@@ -70,6 +74,12 @@ const App = () => {
           <Route path='/Blog/:id' element={<Postdetail />} />
           {/* 5. 마이페이지 */}
           <Route path='/Info/mypage' element={<MyPage />} />
+          
+          {/* 수의사 회원 */}
+          {/* 로그인 회원가입 */}
+          <Route path='/Home_vet' element={<Home_vet />} />
+
+
         </Routes>
         <App_footer activeRoute={activeRoute} /> {/* 현재 경로를 App_footer에 전달 */}
       </div>

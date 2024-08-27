@@ -11,6 +11,12 @@ const slidesData = [
     { id: 3, title: "내 강아지의 기록을 관리해보아요", text: "상담과 건강체크 기록부터 달력에 간단한 메모까지", linktext: "기록 바로보기", img: "/img/dog.png", bk_color: "rgb(23, 104, 69)" }   
 ];
 
+const slidesData_vet = [
+    { id: 1, title: "비대면 컨뱃팅으로 수익 창출", text: "병원 홍보까지 일석이조", linktext: "상담하러가기", img: "/img/bear.png", bk_color: "rgb(104, 23, 27)"},
+    { id: 2, title: "알러지 강아지를 위한 '마이펫두' 사료", text: "제휴 신청 하면 30% 할인", linktext: "제휴 신청하러 가기", img: "/img/cat.png", bk_color: "rgb(23, 66, 104)" },
+    { id: 3, title: "다양한 사연이 있는 커뮤니티", text: "답변을 기다리는 견주들이 있어요", linktext: "커뮤니티 바로가기", img: "/img/dog.png", bk_color: "rgb(23, 104, 69)" }   
+];
+
 //슬라이드 (슬라이드 내용 + 이미지)
 const Slide = ({ title, text, linktext, img, bk_color }) => (
     <div className="slide" style={{ backgroundColor: bk_color }}>
