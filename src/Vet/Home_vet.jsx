@@ -11,7 +11,7 @@ import { useUser } from '../User_Context';
 
 
 export default function Home_vet() {
-  const { move_consult, move_ai_main, move_community } = useNavigationHandlers();
+  const { move_consult_vet, move_community } = useNavigationHandlers();
 
   const { user, login, logout } = useUser();
 
@@ -19,7 +19,7 @@ export default function Home_vet() {
     <div className='frame'>
       <div className='container'>
         <div className='item_long'>
-          <button className='btn_move_section non_meet_consertbtn_img' onClick={move_consult}> 비대면 상담 일정 확인 </button>
+          <button className='btn_move_section non_meet_consertbtn_img' onClick={move_consult_vet}> 비대면 상담 일정 확인 </button>
         </div>
         {/* <div className='item'>
           <button className='btn_move_section ai_healthcheckbtn_img' onClick={move_ai_main}> 일단 적어두자꾸나 </button>
