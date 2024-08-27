@@ -21,7 +21,12 @@ const LoginForm = () => {
       if (response.data.length > 0) {
         const user = response.data[0];
         login(user); // UserContext의 login 함수를 사용하여 전역 상태를 업데이트합니다.
-        navigate('/Home'); // 로그인 성공 후 홈 페이지로 이동합니다.
+        // 사용자 타입에 따라 페이지 이동
+        if (user && user.userType === 'vet') {
+          navigate('/Home_vet'); // 수의사 사용자라면 Home_vet으로 이동
+        } else {
+          navigate('/Home'); // 일반 사용자라면 Home으로 이동
+        }
       } else {
         setMessage('아이디 또는 비밀번호가 잘못되었습니다.');
       }

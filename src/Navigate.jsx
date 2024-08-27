@@ -25,7 +25,16 @@ export function useNavigationHandlers() {
 
     const move_plusdog = () => navigate('/Register/plusdog');
 
+
+    //수의사
+    //홈
+    const move_home_vet = () => navigate('/Home_vet');
+    //상담
+    const move_consult_vet = () => navigate('/Talk/vet_consult');
     return { move_ai_main, move_ai_result, move_home, move_mypage, move_history, 
         move_community, move_consult,
-        move_login, move_signup, move_plusdog };
+        move_login, move_signup, move_plusdog,
+        
+        move_home_vet,move_consult_vet
+    };
 }

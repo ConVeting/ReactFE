@@ -9,7 +9,7 @@ body {
   font-family: 'GmarketSansMedium';
 }
 
-button, input, select, textarea, div {
+button, input, select, textarea, div, td, tr, th, h1, h2, h3 {
   font-family: 'GmarketSansMedium';
 }
 

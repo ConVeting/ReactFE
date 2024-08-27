@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import "./App.css";
-import { UserProvider } from './User_Context';
+import { UserProvider, useUser } from './User_Context';
 
 //앱 헤더 푸터
 import App_header from './Head_and_Foot/app_header.jsx'
@@ -34,17 +34,20 @@ import Postdetail from './Blog/postdetail.jsx';
 import MyPage from './Info/Info_main.jsx';
 
 // 수의사 회원 
-import Home_vet from './Home_vet.jsx';
+import Home_vet from './Vet/Home_vet.jsx';
+import App_footer_vet from './Head_and_Foot/app_footer_vet.jsx';
+import Vet_consult from './Vet/vet_consult.jsx';
 
 //로케이션 훅은 함수에만 가능해서 함수로 변경
-const App = () => {
+const App_inner = () => {
+  // const { userType } = useUser();
+  const { user } = useUser();
 
   const location = useLocation(); // 현재 경로를 가져오기
   // 현재 경로에 따라 활성화 상태 설정
   const activeRoute = location.pathname;
 
   return (
-    <UserProvider>
       <div className='frame1'>
         <App_header />
         <Routes>
@@ -78,13 +81,23 @@ const App = () => {
           {/* 수의사 회원 */}
           {/* 로그인 회원가입 */}
           <Route path='/Home_vet' element={<Home_vet />} />
-
+          <Route path='/Talk/vet_consult' element={<Vet_consult/>}/>
 
         </Routes>
-        <App_footer activeRoute={activeRoute} /> {/* 현재 경로를 App_footer에 전달 */}
+        {user && user.userType === 'vet' ? (
+            <App_footer_vet activeRoute={activeRoute}/>
+          ) : (
+            <App_footer activeRoute={activeRoute} /> /* 현재 경로를 App_footer에 전달 */
+          )}
+        
       </div>
-    </UserProvider>
   );
 
 }
+
+const App = () => (
+  <UserProvider>
+    <App_inner />
+  </UserProvider>
+);
 export default App;

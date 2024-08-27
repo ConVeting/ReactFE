@@ -16,6 +16,7 @@
     "lucide-react": "^0.427.0",
     "react": "^18.2.0",
     "react-big-calendar": "^1.13.2",
+    "react-datepicker": "^7.3.0",
     "react-dom": "^18.2.0",
     "react-kakao-login": "^2.1.1",
     "react-router-dom": "^6.25.1",
